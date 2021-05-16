@@ -12,18 +12,17 @@ public class Library {
         books[2] = horrors;
         books[3] = science;
 
-        for (int index = 0; index < books.length; index++) {
-            Book bk1 = books[index];
-            System.out.println(bk1.getName() + bk1.getNumberOfPages());
-        }
-        System.out.println();
         Book temp = books[0];
         books[0] = books[3];
         books[3] = temp;
 
-        for (int index = 0; index < books.length; index++) {
-            Book bk2 = books[index];
-            if (bk2.equals(science)) {
+        for (Book bk1 : books) {
+            System.out.println(bk1.getName() + bk1.getNumberOfPages());
+        }
+        System.out.println();
+
+        for (Book bk2 : books) {
+            if (bk2.getName() == "Clean code ") {
                 System.out.println(bk2.getName() + " - " + bk2.getNumberOfPages());
             }
         }
