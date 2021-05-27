@@ -12,8 +12,9 @@ public class StartUl {
             System.out.println(all);
         }
         System.out.println();
-
         System.out.println(tracker.findById(1));
-
+        System.out.println();
+        Item bug = new Item();
+        System.out.println(bug);
     }
 }
