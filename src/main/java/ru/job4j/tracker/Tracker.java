@@ -1,7 +1,12 @@
 package ru.job4j.tracker;
 
 
+import java.lang.reflect.Array;
+import java.math.BigInteger;
 import java.util.Arrays;
+import java.util.Objects;
+
+import static java.lang.String.*;
 
 public class Tracker {
     private final Item[] items = new Item[100];
@@ -41,6 +46,53 @@ public class Tracker {
             }
         }
         return rsl;
+    }
+
+    private int indexOf(int id) {
+        int rsl = -1;
+        for (int i = 0; i < size; i++) {
+            if (items[i].getId() == id) {
+                rsl = i;
+                break;
+            }
+        }
+        return rsl;
+    }
+
+    public boolean replace(int id, Item item) {
+        int index = indexOf(id);
+        if (index != -1) {
+            item.setId(id);
+            items[index] = item;
+        }
+        return true;
+    }
+
+    public boolean delete(int id) {
+        int index = indexOf(id);
+        if (index != -1) {
+            System.arraycopy(items, index + 1, items, index, size - index - 1);
+            items[size - 1] = null;
+            size--;
+        }
+        return true;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Tracker tracker = (Tracker) o;
+        return ids == tracker.ids
+                && size == tracker.size
+                && Arrays.equals(items, tracker.items);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(ids, size);
+        result = 31 * result + Arrays.hashCode(items);
+        return result;
     }
 
     @Override
