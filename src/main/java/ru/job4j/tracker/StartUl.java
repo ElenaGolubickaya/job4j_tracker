@@ -69,7 +69,7 @@ public class StartUl {
         }
     }
 
-    public static void init(Input input, Tracker tracker) {
+    public void init(Input input, Tracker tracker) {
         boolean run = true;
         while (run) {
             showMenu();
@@ -92,7 +92,7 @@ public class StartUl {
         }
     }
 
-    private static void showMenu() {
+    private  void showMenu() {
         String[] menu = {
                 "Add new Item", "Show all items", "Edit item",
                 "Delete item", "Find item by id", "Find items by name",
@@ -106,7 +106,7 @@ public class StartUl {
     public static void main(String[] args) {
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
-        StartUl.init(input, tracker);
+        new StartUl().init(input, tracker);
 
         /* System.out.println("----------------------------------------");
         Item item = new Item();
