@@ -25,11 +25,12 @@ public class StartUlTest {
     @Test
     public void whenDeleteItem() {
         Tracker tracker = new Tracker();
+        Input input = new ConsoleInput();
         Item item = new Item("new item");
         tracker.add(item);
         String[] answers = {
-                String.valueOf(item.getId()),
-                "deleted item"
+                String.valueOf(item.getId())
+
         };
         StartUl.deleteItem(new StubInput(answers), tracker);
         Item deleted = tracker.findById(item.getId());
