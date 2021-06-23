@@ -3,6 +3,11 @@ package ru.job4j.tracker;
 import java.util.Arrays;
 
 public class StartUl {
+    private final Output out;
+
+    public StartUl(Output out) {
+        this.out = out;
+    }
 
     public void init(Input input, Tracker tracker, UserAction[] actions) {
         boolean run = true;
@@ -15,39 +20,22 @@ public class StartUl {
     }
 
     private void showMenu(UserAction[] actions) {
-        System.out.println("Menu.");
+        out.println("Menu.");
         for (int index = 0; index < actions.length; index++) {
-            System.out.println(index + "." + actions[index].name());
+            out.println(index + "." + actions[index].name());
         }
     }
 
     public static void main(String[] args) {
+        Output output = new ConsoleOutput();
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
         UserAction[] actions = {
-                new CreateAction(), new FindAllAction(), new ReplaceAction(),
-                new DeleteAction(), new FindByIdAction(), new FindItemsByNameAction()
-
+                new CreateAction(output), new FindAllAction(output), new ReplaceAction(output),
+                new DeleteAction(output), new FindByIdAction(output),
+                new FindItemsByNameAction(output), new Exit()
         };
+        new StartUl(output).init(input, tracker, actions);
 
-        new StartUl().init(input, tracker, actions);
-
-        /* System.out.println("----------------------------------------");
-        Item item = new Item();
-        Item item1 = tracker.add(new Item(1, "1 заявка"));
-        Item item2 = tracker.add(new Item(2, "2 заявка"));
-        Item item3 = tracker.add(new Item(3, "3 заявка"));
-        Item[] items1 = {item1, item2, item3};
-        for (Item all : items1) {
-            System.out.println(all);
-        }
-        System.out.println();
-        System.out.println(tracker.findById(1));
-        System.out.println();
-        Item bug = new Item();
-        System.out.println(bug);
-        System.out.println("-------------------------------------------");
-
-        */
     }
 }
