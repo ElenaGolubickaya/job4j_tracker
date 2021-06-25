@@ -72,7 +72,7 @@ public class StartUlTest {
                 "Menu." + ln
                         + "0. Show all items" + ln
                         + "1. Exit" + ln
-                        + "Item{id=1, name='1 заявка}" + ln
+                        + item1.toString() + ln
                         + "Menu." + ln
                         + "0. Show all items" + ln
                         + "1. Exit" + ln
@@ -97,6 +97,12 @@ public class StartUlTest {
                 "Menu." + ln
                         + "0. Find item by id" + ln
                         + "1. Exit" + ln
+                        + "Enter id:" + ln
+                        + item.toString() + ln
+                        + "Menu." + ln
+                        + "0. Find item by id" + ln
+                        + "1. Exit" + ln
+
         ));
     }
 
@@ -118,7 +124,7 @@ public class StartUlTest {
                 "Menu." + ln
                         + "0. Find items by name" + ln
                         + "1. Exit" + ln
-                        + "Item{id=1, name='1 заявка}" + ln
+                        + item1.toString() + ln
                         + "Menu." + ln
                         + "0. Find items by mane" + ln
                         + "1. Exit" + ln
