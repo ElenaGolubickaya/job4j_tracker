@@ -76,6 +76,7 @@ public class StartUlTest {
                         + "Menu." + ln
                         + "0. Show all items" + ln
                         + "1. Exit" + ln
+
         ));
     }
 
@@ -102,7 +103,6 @@ public class StartUlTest {
                         + "Menu." + ln
                         + "0. Find item by id" + ln
                         + "1. Exit" + ln
-
         ));
     }
 
@@ -145,6 +145,7 @@ public class StartUlTest {
         assertThat(out.toString(), is(
                 "Menu." + System.lineSeparator() +
                         "0. Exit" + System.lineSeparator()
+
         ));
     }
 }
