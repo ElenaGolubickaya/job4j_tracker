@@ -76,7 +76,6 @@ public class StartUlTest {
                         + "Menu." + ln
                         + "0. Show all items" + ln
                         + "1. Exit" + ln
-
         ));
     }
 
