@@ -97,6 +97,7 @@ public class StartUlTest {
                 "Menu." + ln
                         + "0. Find item by id" + ln
                         + "1. Exit" + ln
+                        + item + ln
                         + "Menu." + ln
                         + "0. Find item by id" + ln
                         + "1. Exit" + ln
