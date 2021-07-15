@@ -5,7 +5,6 @@ import org.w3c.dom.ls.LSOutput;
 public class UserStore {
     public static User findUser(User[] user, String login) throws UserNotFoundException {
         for (User user1 : user) {
-            System.out.println(user1);
             if (user1.getUsername().equals(login)) {
                 return user1;
             }
