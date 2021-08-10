@@ -20,16 +20,25 @@ public class ValidateInputTest {
     @Test
     public void whenValidInput() {
         Output out = new StubOutput();
-        Input in = new StubInput(new String[]{"0"});
+        Input in = new StubInput(new String[]{"0", "1"});
         ValidateInput input = new ValidateInput(out, in);
         int selected = input.askInt("Enter menu:");
         assertThat(selected, is(0));
     }
 
     @Test
-    public void whenInvalidNegativeInput() {
+    public void whenMultipleValidInput() {
         Output out = new StubOutput();
-        Input in = new StubInput(new String[]{"-1", "1"});
+        Input in = new StubInput(new String[]{"2", "3"});
+        ValidateInput input = new ValidateInput(out, in);
+        int selected = input.askInt("Enter menu:");
+        assertThat(selected, is(2));
+    }
+
+    @Test
+    public void whenNegativeInput() {
+        Output out = new StubOutput();
+        Input in = new StubInput(new String[]{"-1"});
         ValidateInput input = new ValidateInput(out, in);
         int selected = input.askInt("Enter menu:");
         assertThat(selected, is(-1));
