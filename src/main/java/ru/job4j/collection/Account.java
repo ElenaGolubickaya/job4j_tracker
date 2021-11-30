@@ -35,7 +35,7 @@ public class Account {
         return "Account{"
                 + "passport='" + passport + '\''
                 + ", username='" + username + '\''
-                + ", deposit='" + deposit +  '\''
+                + ", deposit='" + deposit + '\''
                 + '}';
     }
 }

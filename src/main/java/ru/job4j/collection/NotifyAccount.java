@@ -1,4 +1,5 @@
 package ru.job4j.collection;
+
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
