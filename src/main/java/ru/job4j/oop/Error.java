@@ -6,6 +6,7 @@ public class Error {
     private String message;
 
     public Error() {
+
     }
 
     public Error(boolean active, int status, String message) {
@@ -22,10 +23,10 @@ public class Error {
 
     public static void main(String[] args) {
         Error incorrectDate = new Error();
-        Error systemСrash1 = new Error(true, 105, "Ошибка доступа.");
-        Error systemСrash2 = new Error(false, 102, "Недостаточно памяти.");
+        Error error1 = new Error(true, 105, "Ошибка доступа.");
+        Error error2 = new Error(false, 102, "Недостаточно памяти.");
         incorrectDate.errorOutput();
-        systemСrash1.errorOutput();
-        systemСrash2.errorOutput();
+        error1.errorOutput();
+        error2.errorOutput();
     }
 }
