@@ -20,6 +20,14 @@ public class Citizen {
     }
 
     @Override
+    public String toString() {
+        return "Citizen{"
+                + "passport='" + passport + '\''
+                + ", username='" + username + '\''
+                + '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;
