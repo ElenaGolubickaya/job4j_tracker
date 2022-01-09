@@ -45,7 +45,6 @@ public class BankService {
 
     public boolean transferMoney(String srcPassport, String srcReguisite,
                                  String destPassport, String destReguisite, double amount) {
-        boolean rsl = false;
         Account srcAccount = findByReguisite(srcPassport, srcReguisite);
         Account destAccount = findByReguisite(destPassport, destReguisite);
         if (srcAccount != null && destAccount != null && srcAccount.getBalance() >= amount) {
@@ -53,6 +52,6 @@ public class BankService {
             srcAccount.setBalance(srcAccount.getBalance() - amount);
             return true;
         }
-        return rsl;
+        return false;
     }
 }
