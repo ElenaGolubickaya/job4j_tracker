@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class LexSort implements Comparator<String> {
-
     @Override
     public int compare(String left, String right) {
         String[] parts1 = left.split(". ");
