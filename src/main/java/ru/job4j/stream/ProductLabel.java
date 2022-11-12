@@ -10,7 +10,7 @@ public class ProductLabel {
                 .filter(x -> x.getStandard() - x.getActual() >= 0)
                 .filter(x -> x.getStandard() - x.getActual() <= 3)
                 .map(l -> new Label(l.getName(), l.getPrice() / 2))
-                .map(l -> l.toString())
+                .map(Label::toString)
                 .collect(Collectors.toList());
     }
 }
