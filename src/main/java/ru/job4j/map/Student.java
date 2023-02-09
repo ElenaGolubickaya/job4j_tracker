@@ -36,7 +36,6 @@ public class Student {
         Student student = (Student) o;
         return Objects.equals(account, student.account);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(account);
